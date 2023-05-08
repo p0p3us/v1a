@@ -2,10 +2,7 @@ package at.dimaweb.boundary;
 
 import at.dimaweb.control.Var;
 import at.dimaweb.control.Wz;
-import at.dimaweb.entity.DbInternetanbindung;
 import at.dimaweb.entity.DbWebspace;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Accordion;
