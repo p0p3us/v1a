@@ -1,7 +1,9 @@
 package at.dimaweb.control;
 
+import at.dimaweb.entity.DbDomainverwaltung;
 import at.dimaweb.entity.DbInternetanbindung;
 import at.dimaweb.entity.DbKunde;
+import at.dimaweb.entity.DbWebspace;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,6 +19,8 @@ public class App extends Application {
         // alle Tabellen für die Datenbank erstellen
         Var.dbba.erstelleTabelle("Kunde", new DbKunde().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Internetanbindung", new DbInternetanbindung().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Domainverwaltung", new DbDomainverwaltung().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Webspace", new DbWebspace().getTabellenDefinition());
         stage.show();
     }
 

@@ -3,6 +3,7 @@ package at.dimaweb.boundary;
 import java.util.Optional;
 
 import at.dimaweb.control.Var;
+import at.dimaweb.control.Wz;
 import at.dimaweb.entity.DbKunde;
 import at.dimaweb.entity.PropDatenblatt;
 import javafx.collections.FXCollections;
@@ -126,13 +127,23 @@ public class Hauptschirm {
         }
         tvDatenblatt.setItems(olDatenblatt);
         tvDatenblatt.setOnMouseClicked(e -> {
-			if (tvDatenblatt.getSelectionModel().getSelectedItem() != null) {
-				switch (tvDatenblatt.getSelectionModel().getSelectedItem().getAbr()) {
-				case "ia" :
-					Var.hs.bp.setCenter(new GuiIa().erstelleGuiIa());
-					break;
-				}
-			}
+            if (Var.kd.getId() == 0) {
+                Wz.fehler("Bitte zuerst einen Kunden auswählen!");
+            } else {
+                if (tvDatenblatt.getSelectionModel().getSelectedItem() != null) {
+                    switch (tvDatenblatt.getSelectionModel().getSelectedItem().getAbr()) {
+                    case "ia" :
+                        Var.hs.bp.setCenter(new GuiIa().erstelleGuiIa());
+                        break;
+                    case "dv" :
+                        Var.hs.bp.setCenter(new GuiDv().erstelleGuiDv());
+                        break;
+                    case "ws" :
+                        Var.hs.bp.setCenter(new GuiWs().erstelleGuiWs());
+                        break;		
+                    }
+                }
+            }
 		});
         return tvDatenblatt;
     }
