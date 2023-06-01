@@ -144,6 +144,12 @@ public class Hauptschirm {
                     case "ex" :
                         Var.hs.bp.setCenter(new GuiEx().erstelleGuiEx());
                         break;	
+                    case "wm" :
+                        Var.hs.bp.setCenter(new GuiWm().erstelleGuiWm());
+                        break;	
+                    case "hw" :
+                        Var.hs.bp.setCenter(new GuiHw().erstelleGuiHw());
+                        break;	
                     }
                 }
             }

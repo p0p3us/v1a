@@ -2,8 +2,11 @@ package at.dimaweb.control;
 
 import at.dimaweb.entity.DbDomainverwaltung;
 import at.dimaweb.entity.DbExchange;
+import at.dimaweb.entity.DbGeraete;
+import at.dimaweb.entity.DbHardware;
 import at.dimaweb.entity.DbInternetanbindung;
 import at.dimaweb.entity.DbKunde;
+import at.dimaweb.entity.DbWebmail;
 import at.dimaweb.entity.DbWebspace;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -36,6 +39,10 @@ public class App extends Application {
         Var.dbba.erstelleTabelle("Domainverwaltung", new DbDomainverwaltung().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Webspace", new DbWebspace().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Exchange", new DbExchange().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Webmail", new DbWebmail().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Hardware", new DbHardware().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Geraete", new DbGeraete().getTabellenDefinition());
+        new DbGeraete().geInitialisieren();
         stage.show();
     }
 
