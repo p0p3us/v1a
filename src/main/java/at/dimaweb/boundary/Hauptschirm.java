@@ -153,6 +153,9 @@ public class Hauptschirm {
                     case "ss" :
                         Var.hs.bp.setCenter(new GuiSs().erstelleGuiSs());
                         break;		
+                    case "sc" :
+                        Var.hs.bp.setCenter(new GuiSc().erstelleGuiSc());
+                        break;		
                     }
                 }
             }

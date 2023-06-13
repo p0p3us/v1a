@@ -6,6 +6,7 @@ import at.dimaweb.entity.DbGeraete;
 import at.dimaweb.entity.DbHardware;
 import at.dimaweb.entity.DbInternetanbindung;
 import at.dimaweb.entity.DbKunde;
+import at.dimaweb.entity.DbServerclient;
 import at.dimaweb.entity.DbServersystem;
 import at.dimaweb.entity.DbWebmail;
 import at.dimaweb.entity.DbWebspace;
@@ -44,6 +45,7 @@ public class App extends Application {
         Var.dbba.erstelleTabelle("Hardware", new DbHardware().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Geraete", new DbGeraete().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Serversystem", new DbServersystem().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Serverclient", new DbServerclient().getTabellenDefinition());
         new DbGeraete().geInitialisieren();
         stage.show();
     }
