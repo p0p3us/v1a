@@ -1,5 +1,6 @@
 package at.dimaweb.control;
 
+import at.dimaweb.entity.DbArt;
 import at.dimaweb.entity.DbDomainverwaltung;
 import at.dimaweb.entity.DbExchange;
 import at.dimaweb.entity.DbGeraete;
@@ -8,6 +9,7 @@ import at.dimaweb.entity.DbInternetanbindung;
 import at.dimaweb.entity.DbKunde;
 import at.dimaweb.entity.DbServerclient;
 import at.dimaweb.entity.DbServersystem;
+import at.dimaweb.entity.DbSoftware;
 import at.dimaweb.entity.DbWebmail;
 import at.dimaweb.entity.DbWebspace;
 import javafx.application.Application;
@@ -46,7 +48,10 @@ public class App extends Application {
         Var.dbba.erstelleTabelle("Geraete", new DbGeraete().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Serversystem", new DbServersystem().getTabellenDefinition());
         Var.dbba.erstelleTabelle("Serverclient", new DbServerclient().getTabellenDefinition());
-        new DbGeraete().geInitialisieren();
+        Var.dbba.erstelleTabelle("Software", new DbSoftware().getTabellenDefinition());
+        Var.dbba.erstelleTabelle("Art", new DbArt().getTabellenDefinition());
+        new DbGeraete().geInitialisieren(); // gehört zur Hardwareverwaltung
+        new DbArt().arInitialisieren(); //gehört zur Softwareverwaltung
         stage.show();
     }
 
